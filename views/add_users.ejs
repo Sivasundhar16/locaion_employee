@@ -1,0 +1,131 @@
+<%- include('layout/header') %>
+
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style="text-align: center; color: #333; font-size: 2rem;">Add User</h1>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <form action="/add" method="post" style="
+                    padding: 20px; 
+                    background-color: #fff; 
+                    border-radius: 8px; 
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+                ">
+                    <h2 style="
+                    color: #e50914; 
+                    font-size: 1.5rem; 
+                    border-bottom: 2px solid #e50914; 
+                    padding-bottom: 10px; 
+                    text-align: center;
+                    margin-bottom: 20px;
+                ">
+                        Employee Details
+                    </h2>
+
+                    <div class="row" style="
+                    background-color: #d1e7ff; /* Light blue background */
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin-bottom: 16px;
+                ">
+                        <div class="col-lg-6" style="padding-right: 8px;">
+                            <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Employee
+                                Name</label>
+                            <input type="text" id="name" name="name" required style="
+                                width: 100%; 
+                                padding: 12px; 
+                                border-radius: 6px; 
+                                border: 1px solid #ccc; 
+                                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                                font-size: 16px;
+                            ">
+                        </div>
+                        <div class="col-lg-6" style="padding-left: 8px;">
+                            <label for="address"
+                                style="display: block; font-weight: bold; margin-bottom: 5px;">Address</label>
+                            <input type="text" id="address" name="address" required style="
+                                width: 100%; 
+                                padding: 12px; 
+                                border-radius: 6px; 
+                                border: 1px solid #ccc; 
+                                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                                font-size: 16px;
+                            ">
+                        </div>
+                    </div>
+
+                    <div class="row" style="
+                    background-color: #d1e7ff; /* Light blue background */
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin-bottom: 16px;
+                ">
+                        <div class="col-lg-6" style="padding-right: 8px;">
+                            <label for="age" style="display: block; font-weight: bold; margin-bottom: 5px;">Age</label>
+                            <input type="number" id="age" name="age" required style="
+                                width: 100%; 
+                                padding: 12px; 
+                                border-radius: 6px; 
+                                border: 1px solid #ccc; 
+                                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                                font-size: 16px;
+                            ">
+                        </div>
+                        <div class="col-lg-6" style="padding-left: 8px;">
+                            <label for="department"
+                                style="display: block; font-weight: bold; margin-bottom: 5px;">Department</label>
+                            <input type="text" id="department" name="department" required style="
+                                width: 100%; 
+                                padding: 12px; 
+                                border-radius: 6px; 
+                                border: 1px solid #ccc; 
+                                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                                font-size: 16px;
+                            ">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label for="status" style="display: block; font-weight: bold; margin-bottom: 5px;">Employee
+                            Status</label>
+                        <select id="status" name="status" required style="
+                            width: 100%; 
+                            padding: 12px; 
+                            border-radius: 6px; 
+                            border: 1px solid #ccc; 
+                            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                            font-size: 16px;
+                        ">
+                            <option value="" disabled selected>Select status</option>
+                            <option value="Remote Location">Remote Location</option>
+                            <option value="Contract Employee">Contract Employee</option>
+                            <option value="Full-Time">Full-Time</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" style="
+                        background-color: #007bff; 
+                        border: none; 
+                        color: #fff; 
+                        font-size: 16px; 
+                        font-weight: bold; 
+                        padding: 12px; 
+                        width: 100%; 
+                        cursor: pointer; 
+                        border-radius: 6px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+                        transition: background-color 0.3s;
+                    ">
+                        Add Employee
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('layout/footer') %>

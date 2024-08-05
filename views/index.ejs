@@ -1,0 +1,101 @@
+<%- include('layout/header') %>
+
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center; color: #333; font-size: 2rem; margin-top: -20px;">
+            Employee Details
+        </h1>
+
+        <!-- Grid layout starts here -->
+        <div style="
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+        gap: 1rem;
+    ">
+            <% users.forEach(function(user) { %>
+                <div style="
+                    border: 1px solid #ddd; 
+                    border-radius: 5px; 
+                    padding: 1rem; 
+                    cursor: pointer; 
+                    transition: background-color 0.3s; 
+                    background-color: #e0f7fa; /* Light blue color */
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                " data-toggle="modal" data-target="#detailsModal" data-id="<%= user.id %>">
+                    <h4>
+                        <%= user.name %>
+                    </h4>
+                    <p><strong>Employee ID:</strong>
+                        <%= user.employeeId %>
+                    </p>
+                    <p><strong>Address:</strong>
+                        <%= user.address %>
+                    </p>
+                    <p><strong>Age:</strong>
+                        <%= user.age %>
+                    </p>
+                    <p><strong>Department:</strong>
+                        <%= user.department %>
+                    </p>
+                    <p><strong>Status:</strong>
+                        <%= user.status %>
+                    </p>
+                </div>
+                <% }); %>
+        </div>
+        <!-- Grid layout ends here -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="border-radius: 8px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailsModalLabel">Employee Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Tabs here -->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab"
+                                    aria-controls="details" aria-selected="true">Employee Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab"
+                                    aria-controls="location" aria-selected="false">Real-Time Location</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="audit-tab" data-toggle="tab" href="#audit" role="tab"
+                                    aria-controls="audit" aria-selected="false">Audit Trail</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="details" role="tabpanel"
+                                aria-labelledby="details-tab">
+                                <!-- Employee details content here -->
+                            </div>
+                            <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                                <!-- Map integration here -->
+                            </div>
+                            <div class="tab-pane fade" id="audit" role="tabpanel" aria-labelledby="audit-tab">
+                                <!-- Audit trail content here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 10px; background-color: #f4f4f4;">
+        <p>&copy; 2024 Employee Management System</p>
+    </footer>
+
+    <%- include('layout/footer') %>
+
+        <!-- Include Bootstrap JS and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
